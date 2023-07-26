@@ -1,3 +1,4 @@
+from typing import Any, Dict, Tuple
 from django.db import models
 
 # Create your models here.
@@ -6,4 +7,9 @@ class Libro(models.Model):
     titulo = models.CharField(max_length=100, verbose_name='Título')
     imagen = models.ImageField(upload_to='imagenes/', verbose_name='Imagen',null=True)
     descripcion = models.TextField(verbose_name='Descripcion',null=True)
- 
+    def __str__(self):
+        fila = "Tituo: " + self.titulo + " Descripcion: " + self.descripcion
+        return fila
+    def delete(self, using=None, keep_parents:bool=False):
+        self.imagen.storage.delete(self.imagen.name)
+        super().delete()
