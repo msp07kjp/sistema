@@ -3,3 +3,5 @@ from django.http import HttpResponse
 # Create your views here.
 def inicio(request):
     return HttpResponse("<h1>Hola mundo desde Django</h1>")
+def nosotros(request):
+    return render(request, "paginas/nosotros.html")
