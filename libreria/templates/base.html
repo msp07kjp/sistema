@@ -17,13 +17,13 @@
 <body>
     <header>
         <!-- place navbar here -->
-        <nav class="navbar navbar-expand navbar-light bg-light">
-            <div class="nav navbar-nav">
-                <a class="nav-item nav-link active" href="{% url 'inicio' %}">Inicio</a>
-                <a class="nav-item nav-link" href="{% url 'libros' %}">Libros</a>
-                <a class="nav-item nav-link" href="{% url 'nosotros' %}">Nosotros</a>
-            </div>
-        </nav>
+        <nav class="navbar navbar-expand navbar-light bg-light mb-3">
+          <div class="nav navbar-nav">
+              <a class="nav-item nav-link {% if request.resolver_match.view_name == 'inicio' %}active{% endif %}" href="{% url 'inicio' %}">Inicio</a>
+              <a class="nav-item nav-link {% if request.resolver_match.view_name == 'libros' %}active{% endif %}" href="{% url 'libros' %}">Libros</a>
+              <a class="nav-item nav-link {% if request.resolver_match.view_name == 'nosotros' %}active{% endif %}" href="{% url 'nosotros' %}">Nosotros</a>
+          </div>
+      </nav>
     </header>
       
     <div class="container">
