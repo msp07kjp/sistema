@@ -13,7 +13,7 @@
                     <tr>
                         <th scope="col">ID</th>
                         <th scope="col">Titulo</th>
-                        <th scope="col">Imagen</th>
+                        <th class="col-sm-2" scope="col">Imagen</th>
                         <th scope="col">Descripccion</th>
                         <th scope="col">Acciones</th>
                     </tr>
@@ -23,7 +23,10 @@
                     <tr>
                         <td>{{ libro.id}} </td>
                         <td>{{ libro.titulo}}</td>
-                        <td>{{ libro.imagen}}</td>
+                        <td>
+                            <img src="{{ libro.imagen.url}}" class="img-fluid rounded-top" alt="{{libro.imagen.name}}">
+                            
+                        </td>
                         <td>{{ libro.descripcion}}</td>
                         <td>
                             <a name="" id="" class="btn btn-info" href="#{% url 'editar'%}" role="button">Editar</a> 
