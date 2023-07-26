@@ -5,6 +5,11 @@
     
     <div class="mb-3">
       <label for="" class="form-label">{{ campo.label}}</label>
+      {% if campo.field.widget.input_type == 'file' and campo.value %}
+      <div class="col-sm-1">
+        <img src="{{MEDIA_URL}}/imagenes/{{campo.value}}" alt="{{ campo.name }}" class="img-fluid" />
+      </div>
+      {% endif %}
       <input 
         type="{{ campo.field.widget.input_type }}"
         class="form-control" 
